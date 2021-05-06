@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block stylesheet %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/journal/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset("style.css")}}">
+    {% endblock %}
+    <title>
+        {% block title %}
+        Document
+        {% endblock %}
+    </title>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{{ asset("images/logo.png") }}" alt="" width="60" height="50" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">A propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" >Produit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" >Contacter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<body>
+{% block contenue%}
+
+{% endblock %}
+
+
+
+
+<!-- Contact Section -->
+<section class="section-wrapper" id="contacts">
+    <!-- Contacts -->
+    <div class="contacts">
+
+        <!-- Contact Title -->
+        <div class="page-title">
+            <h2>Contacter Nous</span></h2>
+        </div>
+        <!-- End Contact Title -->
+
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div >
+                            <img class="img-contacter"  src="{{ asset("images/logo.png") }}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p>
+                            Nous rendre visite:
+                            <br>
+                            Lot 75 zone industrielle
+                            <br>
+                            Chotrana 2,2036, La Sokra
+                            <br>
+                            Ariana, Tunisie
+                        </p>
+                    </div>
+                    <div class="col">
+                        Nos Horaires:
+                        Lundi-Vendredi: 7H-17H
+                    </div>
+                    <div class="col">
+                        <p>
+                            <strong> Nos Cordonnées: </strong>
+                            <br>
+                            Tél:+216 70 721 177
+                            <br>
+                            Mail: mam@topnet.tn
+                            <br>
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- End Contacts -->
+
+</section>
+<!-- End Contact Section -->
+
+
+
+
+
+<!-- Footer -->
+<div class="bottom-footer">
+    <div class="container">
+        <div class="bottom-footer-left wow fadeInUp" data-wow-duration="1s" data-wow-delay="450ms">
+            <p><span>&#169; Copyright 2021 MaM by</span>  AmaniFatmaFatmaRaoua </p>
+        </div>
+    </div>
+</div>
+<!-- End Footer -->
+
+</body>
+</html>

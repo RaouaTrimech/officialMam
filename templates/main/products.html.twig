@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{asset("styleProducts.css")}}">
+{% endblock %}
+{% block contenue %}
+    <section class="page-layout" >
+        <div class="container">
+            <!--  Title -->
+            <div class="page-title">
+                <h2> Nos Produits</h2>
+            </div>
+
+            <!-- End  Title -->
+
+            <!-- Products liste-->
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="{{ asset("images/briseSoleil.jpg") }}">
+                        <h4 class="product-name"> Brise Soleil</h4>
+                    </div>
+                    <div class="col">
+                        <img src="{{ asset("images/coulissant.jpg") }}">
+                        <h4 class="product-name"> Coulissant</h4>
+                    </div>
+                    <div class="col">
+                        <img src="{{ asset("images/fenetre.jpg") }}">
+                        <h4 class="product-name"> Fenetre</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="{{ asset("images/jalousie.jpg") }}">
+                        <h4 class="product-name"> Jalousie</h4>
+                    </div>
+                    <div class="col">
+                        <img src="{{ asset("images/porteAClamer.jpg") }}">
+                        <h4 class="product-name"> Porte à Clamer</h4>
+                    </div>
+                    <div class="col">
+                        <img src="{{ asset("images/porteCoupeFeu.jpg") }}">
+                        <h4 class="product-name"> Porte Coupe Feu </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="{{ asset("images/porteLourde.jpg") }}">
+                        <h4 class="product-name"> Porte Lourde </h4>
+                    </div>
+                    <div class="col">
+                        <img src="{{ asset("images/volantBattant.jpg") }}">
+                        <h4 class="product-name"> Volant Battan</h4>
+                    </div>
+                    <div class="col">
+                        <img src="{{ asset("images/volet.jpg") }}">
+                        <h4 class="product-name"> Volet </h4>
+                    </div>
+                </div>
+            </div>
+            <!-- End Products List -->
+        </div>
+    </section>
+
+
+
+{% endblock %}
