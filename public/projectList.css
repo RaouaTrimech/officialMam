@@ -19,13 +19,16 @@
     object-fit: contain;
     border-radius: 5%;
 }
-.nom_proj > p{
+.nom_proj > p {
     text-align: center;
     vertical-align: middle;
     font-size: 4em;
     font-family: "Dancing Script";
-    color:darkred;
+    color: darkred;
     padding-top: 50%;
 
+}
 
+a:hover{
+    text-decoration: none;
 }

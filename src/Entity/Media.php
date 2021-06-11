@@ -22,6 +22,21 @@ class Media
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="blob")
+     */
+    private $path;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $category;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="images")
+     */
+    private $images;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +50,42 @@ class Media
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function setPath($path): self
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getImages(): ?Project
+    {
+        return $this->images;
+    }
+
+    public function setImages(?Project $images): self
+    {
+        $this->images = $images;
 
         return $this;
     }

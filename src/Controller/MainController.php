@@ -17,22 +17,6 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
         ]);
     }
-/**
-* @Route("/products",name="productPage")
-*/
-    public function products(): Response
-    {
-        return $this->render('main/products.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
-    /**
-     * @Route("/projects",name="projectPage")
-     */
-    public function projects(): Response
-    {
-        return $this->render('main/projects.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
+
+
 }

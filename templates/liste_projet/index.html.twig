@@ -40,7 +40,11 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col nom_proj animate__fadeIn">
-                                    <p>{{ pro.getNomProjet() }}</p>
+                                    <p>
+                                        <a href="{{ path("project_display") }}">
+                                            {{ pro.getNomProjet() }}
+                                        </a>
+                                    </p>
                                 </div>
                                 <div class="col-8 animate__fadeIn">
                                     <img src="{{ asset("images/projects/project2.jpg") }}" class="img_project">
@@ -58,7 +62,11 @@
                                 </div>
 
                                 <div class="col nom_proj animate__fadeIn">
-                                    <p>{{ pro.getNomProjet() }}</p>
+                                    <p>
+                                        <a href="{{ path("project_display") }}">
+                                            {{ pro.getNomProjet() }}
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </div>

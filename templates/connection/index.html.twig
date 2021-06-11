@@ -1,20 +1,40 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello ConnectionController!{% endblock %}
-
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/web/officielMam/src/Controller/ConnectionController.php'|file_link(0) }}">src/Controller/ConnectionController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/web/officielMam/templates/connection/index.html.twig'|file_link(0) }}">templates/connection/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{asset("styleConnection.css")}}">
 {% endblock %}
+{% block contenue %}
+    <div class="proto-container">
+        <div class="proto"></div>
+        <div class="proto"></div>
+        <div class="proto"></div>
+        <div class="proto"></div>
+    </div>
+
+    <div class="container">
+        <div class="inner">
+            <div class="left">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/logo_copy.svg" alt="CompleteUI Logo" class="logo">
+
+                <div class="content">
+                    <h1>Complete <span>UI Design Course</span></h1>
+
+                    <p>Tired of producing subpar UI designs? CompleteUI is an upcoming course created to help aspiring UI designers create work that's worthy of front-page dribble & behance</p>
+                    <p class="light">CompleteUI is releasing before 2020 on Udemy & other networks.</p>
+                </div>
+            </div>
+            <div class="right">
+                <p>Get notified when I release this course!</p>
+
+                <input type="text" name="email" id="email" placeholder="your email">
+                <button>Notify Me</button>
+
+                <div class="attention">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/me.jpg" alt="Gary Simon Avatar" class="me">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/arrow_copy.svg" alt="Arrow pointing to email form" class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
