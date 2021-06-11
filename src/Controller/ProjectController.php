@@ -79,4 +79,16 @@ class ProjectController extends AbstractController
 
         return $this->redirectToRoute('project_index');
     }
+
+    #[Route('/{id}', name: 'project_showalldetail', methods: ['POST'])]
+    public function showall(Request $request, Project $project): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$project->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($project);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('project_index');
+    }
 }

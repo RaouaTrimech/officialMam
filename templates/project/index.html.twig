@@ -1,37 +1,94 @@
-{% extends 'base.html.twig' %}
+{% extends 'project/administrateur_layout.twig' %}
 
 {% block title %}Project index{% endblock %}
 
-{% block body %}
-    <h1>Project index</h1>
+{% block contenue %}
+    {{ parent() }}
+<div class="col">
+    <div class="main">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom_projet</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+            <div class="container-fluid">
+                <div style="font-family: cursive;font-size: 200%;text-align: center">Project index</div>
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr style="font-size: 18px" align="center">
+                        <th scope="col"  >Id</th>
+                        <th scope="col" >Nom_projet</th>
+                        <th scope="col" >Description</th>
+                        <th scope="col" >actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for project in projects %}
+                        <tr class="table-light" style="font-size: 15px">
+                            <td>{{ project.id }}</td>
+                            <td>{{ project.nomProjet }}</td>
+                            <td>
+                                <div>
+                                    <!--
+                                    <div style="width: 150px; text-overflow: '_'; white-space: nowrap;overflow: hidden;" id="d1">
+                                        {{ project.description }}
+                                    </div>
+                                    <span><button type="button" class="btn btn-light" style="width:1em;">...</button></span>
+                                    <div  id="d2" style="display: none">
+                                        {{ project.description }}
+                                    </div>
+                                    -->
+                                    <div>
+                                        <p style="width: 150px; text-overflow: '_'; white-space: nowrap; overflow: hidden;" id="d1{{ loop.index }}">{{ project.description }}</p>
+
+                                        <p class="hide" id="d2{{ loop.index }}">{{ project.description }}</p>
+                                    </div>
+                                    <button type="button" class="btn btn-light" style="width:1em;" id="togg{{ loop.index }}">...</button>
+
+                                </div>
+
+                            </td>
+                            <td>
+                                <a href="{{ path('project_show', {'id': project.id}) }}"><button type="button" class="btn btn-outline-info">show</button></a>
+                                <a href="{{ path('project_edit', {'id': project.id}) }}"><button type="button" class="btn btn-outline-secondary">edit</button></a>
+                                <a href="{{ path('project_delete', {'id': project.id}) }}"><button type="button" class="btn btn-outline-danger">delete</button></a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4" align="center">aucun projet n'est ajouté</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a href="{{ path('project_new') }}"><button class="btn btn-primary" type="button">Ajouter un projet</button></a>
+
+                </div>
+                <br>
+            </div>
+    </div>
+</div>
+    </div>
+    <br>
+
+    <script>
         {% for project in projects %}
-            <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.nomProjet }}</td>
-                <td>{{ project.description }}</td>
-                <td>
-                    <a href="{{ path('project_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        let togg{{ loop.index }} = document.getElementById("togg{{ loop.index }}");
+        let d1{{ loop.index }} = document.getElementById("d1{{ loop.index }}");
+        let d2{{ loop.index }} = document.getElementById("d2{{ loop.index }}");
 
-    <a href="{{ path('project_new') }}">Create new</a>
+
+        togg{{ loop.index }}.addEventListener("click", () => {
+            if(getComputedStyle(d1{{ loop.index }}).display != "none"){
+                d1{{ loop.index }}.style.display = "none";
+                d2{{ loop.index }}.style.display = "block";
+            } else {
+                d1{{ loop.index }}.style.display = "block";
+                d2{{ loop.index }}.style.display = "none";
+            }
+        })
+
+        {% endfor %}
+    </script>
+
 {% endblock %}
