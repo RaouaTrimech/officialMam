@@ -34,9 +34,15 @@ class Project
      */
     private $images;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Product::class, inversedBy="projects")
+     */
+    private $produitsUtilises;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->produitsUtilises = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -94,6 +100,30 @@ class Project
                 $image->setImages(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProduitsUtilises(): Collection
+    {
+        return $this->produitsUtilises;
+    }
+
+    public function addProduitsUtilis(Product $produitsUtilis): self
+    {
+        if (!$this->produitsUtilises->contains($produitsUtilis)) {
+            $this->produitsUtilises[] = $produitsUtilis;
+        }
+
+        return $this;
+    }
+
+    public function removeProduitsUtilis(Product $produitsUtilis): self
+    {
+        $this->produitsUtilises->removeElement($produitsUtilis);
 
         return $this;
     }

@@ -41,3 +41,10 @@ body {
 .hide{
     display: none;
 }
+
+.titre{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size:2em;
+    color: #c17473;
+}

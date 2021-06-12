@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ProjectDisplayController extends AbstractController
+class SignINUPController extends AbstractController
 {
-    #[Route('/project/display', name: 'project_display')]
+    #[Route('/sign/i/n/u/p', name: 'sign_i_n_u_p')]
     public function index(): Response
     {
-        return $this->render('project_display/index.html.twig', [
-            'controller_name' => 'ProjectDisplayController',
+        return $this->render('sign_inup/index.html.twig', [
+            'controller_name' => 'SignINUPController',
         ]);
     }
 }

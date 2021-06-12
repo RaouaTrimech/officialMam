@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Montserrat';
+    background: #ffffff;
+    font-size: 18px;
+    height: 100vh;
+}
+input
+{
+    box-sizing: border-box;
+    border: 0.1ex solid rgb(211, 210, 210) ; 
+    border-radius: 4px;
+    
+
+}
+
+input:hover{
+    box-shadow: rgb(235, 234, 234) 0ex 0ex 0.1ex 0.1ex;
+}
+::placeholder{
+    color: rgb(194, 191, 191);
+}
+
+
+
+
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+
+    
+
+    h1 {
+        margin: 1em 0;
+    }
+
+    p {
+        line-height: 1.7rem;
+    }
+    #log{
+        padding-bottom: 0;
+        margin-bottom: 0;
+        margin-top : 0 ;
+    }
+    
+
+    .left {
+        background: linear-gradient(160deg, #9941ff 0%,#000000 100%);
+        padding: 1em;
+
+        p, h1 {
+            color: #eee9e7;
+        }
+    }
+
+    #exit{
+        width : 3ex ;
+        position: absolute;
+        right : 20px;
+        margin-top: 1.5ex;
+        transition: transform .7s ease-in-out;
+    
+    }
+
+    #exit:hover{
+        transform: rotate(360deg);
+    }
+
+    .right p {
+        
+        text-align: center;
+        font-family: 'Baloo Tammudu 2', cursive;
+        font-size: 8ex;
+        height : 7ex ; 
+        
+    }
+    
+    .inside {
+        margin: 0.2em 0 0.1em;
+    }
+    
+    
+
+    .light {
+        color: rgb(255, 255, 255) !important;
+        margin-top: 2em;
+    }
+    #su{
+        margin :2ex 2ex;
+        font-size : 1.7ex;
+    }
+    #fyp{
+        margin: 4ex ;
+        font-size : 1.7ex;
+    }
+    input, button {
+        width: calc(100% - 3em);
+        padding: .5em;
+        font-size: 1.3rem;
+        outline: none;
+        margin: 1em;
+    }
+
+    button {
+        width: calc(100% - 2em);
+        margin: 0;
+        background: #8c27ff;
+        border-radius: 3px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        
+    }
+    button:hover{
+        background-color: #222222;
+        
+        
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+
+    button {
+        width: 60% !important;
+    }
+
+    input {
+        width: calc(60% - 1em) !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    .logo {
+        
+        width : 15ex;
+        margin-top: 1ex;
+        
+
+    }
+
+    p {
+        line-height: 1.7em !important;
+    }
+
+    .inner {
+        display: grid;
+        grid-template-columns: 55% auto;
+
+        .left {
+            text-align: left;
+            padding: 0 2em;
+            height: 100vh;
+            display: grid;
+
+            .content {
+                padding: 0 3em;
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 2.4em;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        .right {
+            text-align: right;
+            align-self: center;
+            justify-self: center;
+
+            input {
+                width: 100% !important;
+                margin: 1em 0;
+            }
+
+            button {
+                width: 100% !important;
+            }
+        }
+        .inside {
+            padding: 0 3em 1.5em;
+        }
+    }
+
+    .proto-container {
+        clip-path: inset(0 45% 0 0);
+        position: absolute;
+        top: 20%;
+        height: 70%;
+        z-index: 0;
+        width: 100%;
+        pointer-events: none;
+    
+
+        .proto {
+            border: 3px solid rgba(255,255,255,.1);
+            width: 19%;
+            height: 80%;
+            float: left;
+            margin-left: 1em;
+            transform: translateX(10%);
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 1600px) {
+    body {
+        font-size: 22px;
+    }
+
+    .content {
+        padding: 0 6em !important;
+    }
+
+    
+    .inside  {
+        padding : 0 ;
+    }
+    #exit{
+        margin-right: 2ex;
+    }
+
+    
+    
+}
+
+

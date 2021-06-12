@@ -37,6 +37,11 @@ class Media
      */
     private $images;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Product::class, mappedBy="image", cascade={"persist", "remove"})
+     */
+    private $product;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,28 @@ class Media
     public function setImages(?Project $images): self
     {
         $this->images = $images;
+
+        return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($product === null && $this->product !== null) {
+            $this->product->setImage(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($product !== null && $product->getImage() !== $this) {
+            $product->setImage($this);
+        }
+
+        $this->product = $product;
 
         return $this;
     }

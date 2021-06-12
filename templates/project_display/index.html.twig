@@ -32,34 +32,66 @@
                         </h2>
                         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
-                                n a coherent paragraph, each sentence relates clearly to the topic sentence or controlling idea, but there is more to coherence than this. If a paragraph is coherent, each sentence flows smoothly into the next without obvious shifts or jumps. A coherent paragraph also highlights the ties between old information and new information to make the structure of ideas or arguments clear to the reader.
-
-                                Along with the smooth flow of sentences, a paragraph’s coherence may also be related to its length. If you have written a very long paragraph, one that fills a double-spaced typed page, for example, you should check it carefully to see if it should start a new paragraph where the original paragraph wanders from its controlling idea. On the other hand, if a paragraph is very short (only one or two sentences, perhaps), you may need to develop its controlling idea more thoroughly, or combine it with another paragraph.
-
-                                A number of other techniques that you can use to establish coherence in paragraphs are described below.
-
-                                Repeat key words or phrases. Particularly in paragraphs in which you define or identify an important idea or theory, be consistent in how you refer to it. This consistency and repetition will bind the paragraph together and help your reader understand your definition or description.
-
-                                Create parallel structures. Parallel structures are created by constructing two or more phrases or sentences that have the same grammatical structure and use the same parts of speech. By creating parallel structures you make your sentences clearer and
+                                {{ description}}
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header animate__animated animate__backInRight animate__delay-1s" id="flush-headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                Accordion Item #2
+                                Produits Utilisés
                             </button>
                         </h2>
                         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Placeholder  a coherent paragraph, each sentence relates clearly to the topic sentence or controlling idea, but there is more to coherence than this. If a paragraph is coherent, each sentence flows smoothly into the next without obvious shifts or jumps. A coherent paragraph also highlights the ties between old information and new information to make the structure of ideas or arguments clear to the reader.
+                            <div class="accordion-body">
 
-                                Along with the smooth flow of sentences, a paragraph’s coherence may also be related to its length. If you have written a very long paragraph, one that fills a double-spaced typed page, for example, you should check it carefully to see if it should start a new paragraph where the original paragraph wanders from its controlling idea. On the other hand, if a paragraph is very short (only one or two sentences, perhaps), you may need to develop its controlling idea more thoroughly, or combine it with another paragraph.
 
-                                A number of other techniques that you can use to establish coherence in paragraphs are described below.
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        {% set i=0 %}
+                                        {%for prod in prod_util %}
+                                            {% if (loop.index ) %3 ==0  %}
+                                                {% set i=i+1 %}
+                                        <li class="page-item"><a class="page-link" href="{{ path('project_display',{'id':prod ,'page': i}) }}" >{{ i }}</a></li>
 
-                                Repeat key words or phrases. Particularly in paragraphs in which you define or identify an important idea or theory, be consistent in how you refer to it. This consistency and repetition will bind the paragraph together and help your reader understand your definition or description.
+                                            {% endif %}
+                                        {% endfor %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
 
-                                Create parcontent for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                            {% set i=0 %}
+
+                            {% for pr in ProductsParPage %}
+                                {% if (loop.index ) %3 ==0  %}
+                                    <div class="row">
+                                {% endif %}
+                                <div class="col-4">
+                                    {{ pr }}
+                                    {% set i=i+1 %}
+                                </div>
+                                {% if i ==3 %}
+                                    </div>
+                                {% set i=0 %}
+                                {% endif %}
+                                {% else %}
+                                vidddddddddddddddde
+                            {% endfor %}
+
+                            </div>
+
                         </div>
                     </div>
 

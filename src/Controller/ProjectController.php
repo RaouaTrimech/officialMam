@@ -91,4 +91,27 @@ class ProjectController extends AbstractController
 
         return $this->redirectToRoute('project_index');
     }
+
+    #[Route('/display/{id}{page<\d+>?1}/{number<\d+>?6}', name: 'project_display')]
+    public function display(Project $project,$page,$number): Response
+    {
+        //$prod_util=$project->getProduitsUtilises() ;
+        $prod_util=['a','b','c','d','e','f','g','h'];
+        $images=$project->getImages();
+        $description=$project->getDescription();
+
+        $repository = $this->getDoctrine()->getRepository('App:Product');
+        $conditions = [];
+        $ProductsParPage = $repository->findBy($conditions, [],$number, ($page - 1) * $number);
+
+        return $this->render('project_display/index.html.twig', [
+            'controller_name' => 'ProjectDisplayController',
+            'prod_util' => $prod_util,
+            'images' =>$images,
+            'description'=>$description,
+            'ProductsParPage' => $ProductsParPage
+        ]);
+    }
+
+
 }

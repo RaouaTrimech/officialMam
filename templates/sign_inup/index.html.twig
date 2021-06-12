@@ -1,17 +1,11 @@
+<!DOCTYPE html>
+
+<title>Connection</title>
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset("style.css") }}">
+{% endblock %}
+
 {% block contenue %}
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{asset("vs/style.css")}}"/>
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-        <title>Connection</title>
-    </head>
-    <body>
     <div class="proto-container">
         <div class="proto"></div>
         <div class="proto"></div>
@@ -23,8 +17,8 @@
         <div class="inner">
             <div class="left">
                 <div col-6>
-                    <img class="logo" src="{{ asset("images/logos/mamLogo.svg") }}" alt="CompleteUI Logo" >
-                    <a href={{ path("mainPage") }}><img id="exit" src="{{ asset("images/logos/exitLogo.png") }}" alt="exit"></a>
+                    <img class="logo" src="mamLogo.svg" alt="CompleteUI Logo" >
+                    <a href=""><img id="exit"src="exitLogo.png" alt="exit"></a>
                 </div>
 
                 <div class="content">
@@ -41,10 +35,8 @@
                     <div>
                         <input class="field"type="text" name="email" id="email" placeholder="your email">
                         <input class ="field"type="text" name="password" id="password" placeholder="your password">
-                        {% block inscrit %}
-                            <a id="fyp"href="">forgot your password?</a>
-                            <a id="su"href="">sign up</a>
-                        {% endblock %}
+                        <a id="fyp"href="">forgot your password?</a>
+                        <a id="su"href="">sign up</a>
                         <br>
                         <br>
                         <br>
@@ -70,7 +62,4 @@
             })
         })
     </script>
-    </body>
-    </html>
 {% endblock %}
-
